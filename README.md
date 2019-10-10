@@ -13,7 +13,11 @@
 ### Step 1:
 
 - Create a `components` directory with `Input.jsx` and `WeatherCard.jsx`.
-- Create a `services` directory, and inside create a `weather.js` file. So far we've been making API calls directly into our components and this approach is fine for small applications, however as our projects grow in size and complexity, we need to add structure to our files. In addition this structure helps to maintain, track bugs and make the code run optimilly. The main change here is that our AJAX call has been extracted from the rest of our React files and placed in a services directory. React doesn't have opinions on how directories and files should be organized, however there are a few common conventions on good ways to structure our application. It is common practice to group files together either by their similarieties or their features. In this particular case we will group similar files together. That being said our file structure should look like this: 
+- Create a `services` directory, and inside create a `weather.js` file. So far we've been making API calls directly into our components and this approach is fine for small applications, however as our projects grow in size and complexity, we need to add structure to our files. In addition this structure helps to maintain, track bugs and make the code run well.
+
+**The main change here is that our Axios call has been extracted from the rest of our React files and placed in a services directory.**
+
+React doesn't have opinions on how directories and files should be organized, however there are a few common conventions for structuring our application. It is common practice to group files either by similarity or by features. In this particular case we will group similar files together. Our file structure should look like this: 
 
 ```
 src 
@@ -28,27 +32,26 @@ src
 ### Step 2:
 
 - In `weather.js`: 
-   1. Import axios on the top and don't forget to define your `apiKey` variable.
-   2. Create a method(use arrow function declaration) `fetchData()` that takea `inputValue` as a parameter, that makes an axios call(interpolating the `inputValue`) to the Open Weather Api and **returns** the response. Remember that the actual data we need will be nested inside the response object.
-   3. In order for you to be able use this method in `App.js` you have to export it. Simply add the word  `export` in front of the `const` key word.
+   1. Import axios on the top and don't forget to define an `apiKey` variable.
+   2. Create a method (using arrow function declaration) `fetchData()` that takes `inputValue` as a parameter. This method will make an Axios call (interpolating the `inputValue`) to the Open Weather Api and **return** the response. Remember that the actual data we need will be nested inside the response object.
+   3. In order to be able use this method in `App.js` we will have to export it. Simply add the word `export` in front of the `const` keyword.
    
       - EXAMPLE:
       
       ```weather.js
-   export const fetchData = async (inputValue) => {
-      // your axios call 
-      // your return 
-   }
+	   export const fetchData = async (inputValue) => {
+	      // your axios call 
+	      // your return 
+	   }
       ```
 
 ### Step 3: 
-	- `Input.jsx` is a functional component that returns a `<form>` and within that form **include** `<h1>` tag with a short title, `<input>` tag with the following attributes: type as `text` and another `<input>` tag with attribute type as `submit`. Feel free to set your placeholder attribute to whatever string you feel like.
-	- 
-	
+`Input.jsx` is a functional component that returns a `<form>` and within that form **include** `<h1>` tag with a short title, `<input>` tag with the following attributes: type as `text` and another `<input>` tag with attribute type as `submit`. Feel free to set your placeholder attribute to whatever string you feel like.
 	```
 	<input type="text" placeholder="Your Zipcode..."/>
         <input type="submit" />
 	```
+
 
 ### Step 4: 
 1. Head back over to your `App.js` component and convert it into a class component.  Define its inital state: 
