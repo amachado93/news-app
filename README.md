@@ -4,7 +4,7 @@
 
 ### Open Weather API
 
-1. We'll use the OpenWeatherMap API to look up weather data. You already have API key(revisit open-weather-api repo and the homework you've completed) or check your email.
+1. We'll use the OpenWeatherMap API to look up weather data. Get your API key here: https://home.openweathermap.org/users/sign_up.
 1. Use this sort of URL to query weather data: https://api.openweathermap.org/data/2.5/weather?zip=THE_USERS_ZIP_CODE_HERE,us&units=imperial&appid=YOUR_API_KEY_HERE
 - Note you'll have to supply your API key as well as the zip code the user has input.
 
