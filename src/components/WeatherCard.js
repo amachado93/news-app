@@ -8,7 +8,6 @@ const WeatherCard = (props) => {
             <p>Current temperature is {props.weatherData.temp}</p>
             <p>High of {props.weatherData.temp_max}</p>
             <p>Low of {props.weatherData.temp_min}</p>
-
         </div>
     )
 }
