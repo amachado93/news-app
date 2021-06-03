@@ -8,8 +8,8 @@ export const fetchData = async (inputValue) => {
     // axios call
     const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${inputValue},us&units=imperial&appid=` + apiKey);
 
-    console.log(response);
+    
     // return
-    return Object.keys(response);
+    return response;
     
 }

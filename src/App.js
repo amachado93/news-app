@@ -38,17 +38,17 @@ class App extends Component {
     console.log(this.state.value)
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     console.log('submitted form')
     // takes the user's input and passes it to API call
-    fetchData(this.state.value);
+    const data = await fetchData(this.state.value);
     
     // sets the state to the API call on above function
     this.setState({
-      weatherData: fetchData(this.state.value)
+      weatherData: data
     });
-    
+    console.log(this.state.weatherData)
   }
 
   render(){
