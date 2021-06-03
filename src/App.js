@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-//import axios from 'axios';
-
 import { fetchData } from './services/weather';
 
 import Input from './components/Input';
@@ -46,11 +44,13 @@ class App extends Component {
         onChange={this.handleChange} 
         onSubmit={this.handleSubmit}
       />
+      {this.state.isActive  
+        ? <WeatherCard 
+          weatherData={this.state.weatherData} 
+          location={this.state.location} />
+        : null
+      }
       
-      <WeatherCard 
-        weatherData={this.state.weatherData} 
-        location={this.state.location} 
-      />
     </div>
   );
   }
